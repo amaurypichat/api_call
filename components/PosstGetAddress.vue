@@ -14,19 +14,14 @@ const props = defineProps({
 
 async function LoadRefresh() {
     var iinputValue = document.getElementById("iinput").value;
-    props.fonc();
-    if (iinputValue == "") {
-        alert("Veuillez entrer une valeur")
-    } else {
-        await posstt(iinputValue);
-    }
+    props.fonc(iinputValue);
 
 }
 
 async function posstt(iinputValue) {
     try {
 
-        const response = await $fetch("http://amaurypichat.fr:3000/postdata", {
+        const response = await $fetch("https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port", {
             method: "POST",
             mode: 'no-cors',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

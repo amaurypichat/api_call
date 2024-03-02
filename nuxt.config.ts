@@ -1,6 +1,9 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 const path = require('path');
 export default defineNuxtConfig({
+  app: {
+    baseURL: '/api_vue3/'
+  },
   //...
   // extends: ["./xapi"], // Add this line,
   build: {
@@ -46,7 +49,7 @@ export default defineNuxtConfig({
   //   proxyCookies: true,
   //   clients: {}
   // }
-  ssr:true,
+  ssr:false,
   postcss: {
     plugins: {
       tailwindcss: {},
