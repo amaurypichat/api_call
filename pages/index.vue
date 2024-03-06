@@ -2,12 +2,12 @@
     <v-app>
         <v-container>
             <v-card>
-                <v-card-title>Mise à jour d'une liste distante via API avec Vue.js</v-card-title>
+                <v-card-title>Liste des adresses similaires situées dans des villes différentes en France</v-card-title>
                 <v-card-text>
-                    Entrez une valeur afin de mettre à jour la liste affichée en bleu
+                    Entrez des mots désignant une rue ou une ville et un numéro correspond à une adresse.
                 </v-card-text>
                 <v-card-text>
-                    La liste est réinitialisée toutes les 3 minutes
+                    5 résultats maximum
                 </v-card-text>
                 <v-card-actions>
                     <PosstGetAddress  :fonc="getQuery" />
@@ -20,7 +20,7 @@
             </v-card>
         </v-container>
 
-        <ShowListAddress :componentKey="componentKey"  />
+        <ShowListAddress v-model="query" :key="componentKey" :query="query"  />
 
     </v-app>
 </template>
@@ -29,19 +29,13 @@
 import { ref } from 'vue';
 const query = ref('https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port');
 const componentKey=ref(0)
-// defineProps({
-//   query: String,
-// })
+
 const getQuery = (q) => {
-    // alert("sdg")
     q=q.replaceAll(" ","+")
-    componentKey.value=componentKey.value+1
-    alert(componentKey.value)
+    // componentKey.value=componentKey.value+1
+    // alert(componentKey.value)
     query.value='https://api-adresse.data.gouv.fr/search/?q='+q;
 };
-
-
-
 
 </script>
   

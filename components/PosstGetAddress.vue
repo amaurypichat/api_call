@@ -1,5 +1,4 @@
-
-<script setup >
+<script setup>
 
 
 
@@ -14,7 +13,12 @@ const props = defineProps({
 
 async function LoadRefresh() {
     var iinputValue = document.getElementById("iinput").value;
-    props.fonc(iinputValue);
+
+    if (iinputValue != "") {
+        props.fonc(iinputValue);
+    }else{
+        alert("Entrer une valeur")
+    }
 
 }
 
@@ -39,9 +43,9 @@ async function posstt(iinputValue) {
 
 
 <template>
-    <input id="iinput" type="text" class="me-3" />
+    <input id="iinput" value="8 boulevard du port" type="text" class="me-3" />
     <button id="btn_save" class="px-3 py-2 rounded bold text-white cursor-pointer"
-        @click="LoadRefresh()">Enregistrer</button>
+        @click="LoadRefresh()">Chercher</button>
 
 </template>
 
@@ -49,11 +53,11 @@ async function posstt(iinputValue) {
 #iinput {
     border-width: 1px;
     border-style: solid;
-    width: calc(100% - 10px); 
+    width: calc(100% - 10px);
 }
 
 #btn_save {
     background-color: #2196f3;
-    
+
 }
 </style>
