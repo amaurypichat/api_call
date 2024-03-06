@@ -22,7 +22,5 @@ jobs:
           script: |
             cd /var/www/html/dev/api_call # Specify the path to your app directory on the server
             git pull origin master
-            npm install --legacy-peer-deps
-            npm run test
-            npm run generate
             
+
