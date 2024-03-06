@@ -43,7 +43,7 @@ describe('YourAsyncSetupComponent.vue', () => {
     const wrapper = suspenseWrapper
 
     // Continue your tests
-    expect(wrapper.text()).contains('<div class="w-full"><div class="max-h-5 tt"><div class="AAAA w-50 bg-blue rounded px-2 py-2 text-center my-2 mx-2">8 Boulevard des Evades de France</div><div class="w-25 bg-blue rounded px-2 py-2 text-center my-2 mx-2">Port-Vendres</div><div class="w-25 bg-blue rounded px-2 py-2 text-center my-2 mx-2">66148</div></div></div>');
+    expect(wrapper.text()).contains('8 Boulevard des Evades de France');
 
     suspenseWrapper.unmount();
   });

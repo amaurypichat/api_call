@@ -9,6 +9,7 @@ const props = defineProps({
 
 const items = ref(null)
 const { data: count } = await useFetch('https://api-adresse.data.gouv.fr/search/?q=' + props.query)
+console.log(count)
 if (count._rawValue.features[0].properties.street != "Quai de l'adresse 1") {
   items.value = count._rawValue.features
 } else {
