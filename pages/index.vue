@@ -11,6 +11,7 @@
                 </v-card-text>
                 <v-card-actions>
                     <PosstGetAddress  :fonc="getQuery" />
+                    
                 </v-card-actions>
             </v-card>
             <div class="p-2">
